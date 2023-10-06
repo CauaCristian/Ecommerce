@@ -49,20 +49,22 @@ class _CartState extends State<Cart> {
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
-    String getState(){
-      if(widget.stateOrder is StateOrderAprovate){
+    String getState() {
+      if (widget.stateOrder is StateOrderAprovate) {
         return "aprovado";
       }
-      if(widget.stateOrder is StateOrderPeding){
+      if (widget.stateOrder is StateOrderPeding) {
         return "Pendente";
       }
-      if(widget.stateOrder is StateOrderRejected){
+      if (widget.stateOrder is StateOrderRejected) {
         return "reprovado";
       }
-    return "";
+      return "";
     }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Carrinho de compras"),
@@ -109,15 +111,28 @@ class _CartState extends State<Cart> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Valor: \$ ${widget.sumCart.toStringAsFixed(2)}"),
-                  Text(getState()),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (widget.stateOrder != null) {
-                        widget.stateOrder!.gerarMensagem();
-                      }
-                    },
-                    child: const Text("Finalizar"),
+                  Text("Valor: \$ ${widget.sumCart.toStringAsFixed(2)}",
+                      style: const TextStyle(fontSize: 24)),
+                  Text(
+                    getState(),
+                    style: const TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(7.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (widget.stateOrder != null) {
+                          widget.stateOrder!.gerarMensagem();
+                        }
+                      },
+                      child: const Text(
+                        "Finalizar",
+                        style: TextStyle(
+                            fontSize: 24, color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                    ),
                   ),
                 ],
               ),

@@ -1,5 +1,6 @@
 import 'product_Model.dart';
 class MenuModel{
+
   final List<Product> _menu = [
     Product(
       name: "Hamburguer",
@@ -12,6 +13,24 @@ class MenuModel{
       description: "salsicha, batata-palha",
       image: "assets/images/cachorroquente.png",
       value: 15,
+    ),
+    Product(
+      name: "Pizza",
+      description: "calabresa,portuguesa,queijo...",
+      image: "assets/images/pizza.png",
+      value: 55,
+    ),
+    Product(
+      name: "Jantinha",
+      description: "montada a seu gosto",
+      image: "assets/images/jantinha.jpg",
+      value: 35,
+    ),
+    Product(
+      name: "Guarana",
+      description: "lata 350ml",
+      image: "assets/images/Guarana.png",
+      value: 5,
     ),
     Product(
       name: "Coca-Cola",
